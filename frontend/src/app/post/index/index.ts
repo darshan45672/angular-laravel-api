@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Post } from '../post';
 import { PostService } from '../post-service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-index',
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './index.html',
   styleUrl: './index.css'
 })
