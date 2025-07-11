@@ -1,0 +1,36 @@
+<div class="card mt-3">
+    <h3 class="card-header p-3">Angular CRUD APP</h3>
+    <div class="card-body">
+        <div class="mt-1">
+            <a [routerLink]="['/posts']" class="btn btn-primary btn-sm">Back to Posts</a>
+        </div>
+        <form (ngSubmit)="submit()">
+            @if(errors && (errors.title || errors.content)){
+                <div class="alert alert-danger mt-2">
+                    <ul>
+                        @if(errors.title){
+                            <li>{{errors.title}}</li>
+                        }
+                        @if(errors.content){
+                            <li>{{errors.content}}</li>
+                        }
+                    </ul>
+                </div>
+            }
+            <div class="mt-2">
+                <label for="title">Title</label>
+                <input type="text" [(ngModel)]="title" name="title" id="title" class="form-control"
+                    placeholder="Enter title" />
+            </div>
+            <div class="mt-2">
+                <label for="content">Content</label>
+                <textarea [(ngModel)]="content" name="content" id="content" class="form-control"
+                    placeholder="Enter Content"></textarea>
+            </div>
+            <div class="mt-2">
+                <button class="btn btn-success">Submit</button>
+            </div>
+        </form>
+
+    </div>
+</div>
