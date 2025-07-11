@@ -17,4 +17,10 @@ export class PostService {
   createPost(data: Post): Observable<Post> {
     return this.http.post<Post  >(`${this.apiUrl}/posts`, data);
   }
+  getPostById(postId: string): Observable<Post> {
+    return this.http.get<Post>(`${this.apiUrl}/posts/${postId}`);
+  }
+  updatePost(id: string, data: Post): Observable<Post> {
+    return this.http.put<Post  >(`${this.apiUrl}/posts/${id}`, data);
+  }
 }
